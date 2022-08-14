@@ -87,7 +87,7 @@ export default function Home() {
 
 			// call the numAddressesWhitelisted from the contract
 			const _numberOfWhitelisted =
-				await whitelistContract.numAddressesWhitelisted()
+				await whitelistContract.numWhitelistedAddress()
 			setNumberOfWhitelisted(_numberOfWhitelisted)
 		} catch (err) {
 			console.error(err)
@@ -105,7 +105,7 @@ export default function Home() {
 			// Get the address associated to the signer which is connected to  MetaMask
 			const address = await signer.getAddress()
 			// call the whitelistedAddresses from the contract
-			const _joinedWhitelist = await whitelistContract.whitelistedAddresses(
+			const _joinedWhitelist = await whitelistContract.whitelistedAddress(
 				address
 			)
 			setJoinedWhitelist(_joinedWhitelist)
